@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+:root {
+	--font-size: 18px;
+	--line-height: 125%;
+	--color: rgb(243, 243, 243);
+
+	--gutter: calc(var(--font-size) * 2)
+}
+
+body {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	padding-top: calc(var(--gutter) * 1);
+	padding-right: var(--gutter);
+	padding-left: var(--gutter);
+	padding-bottom: calc(var(--gutter) * 2);
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--gutter);
+	justify-content: space-between;
+	background-color: #000000;
+	color: var(--color);
+	font-family: 'Audiowide', cursive;
+}
+
+header {
+	margin-top: 82vh;
+	padding-right: var(--gutter);
+	padding-left: var(--gutter);
+	margin-bottom: 20vh;
+}
+
+.headerContainer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+h1 {
+	font-size: calc(var(--font-size) * 6);
+	line-height: calc(var(--line-height) * .7);
+	font-variation-settings: "wght" 500;
+	text-transform: uppercase;
+	word-break: break-all;
+	animation: glitchH1 3s ease-in infinite;
+}
+
+
+footer {
+	font-size: calc(var(--font-size) * 0.75);
+	font-weight: 200;
+	position: fixed;
+	bottom: 573px;
+	right: 10px;
+	display: flex;
+	text-transform: uppercase;
+	transform-origin: right bottom;
+	transform: rotate(270deg);
+	color: gray;	
+}
+
+
