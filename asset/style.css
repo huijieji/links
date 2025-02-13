@@ -55,6 +55,8 @@ h3 {
 	color: var(--color);
 	transition: all 0.3s;
 	font-size: 40px;
+	letter-spacing: 1px;
+	color:lightgrey;
 }
 
 .top a:hover {
@@ -495,6 +497,7 @@ video {
 
 	.top a {
 		font-size: 24px;
+		letter-spacing: 1px;
 	}
 
 	.audio-container,
@@ -579,7 +582,8 @@ video {
 	}
 
 	.top a {
-		font-size: 18px;
+		font-size: 25px;
+		letter-spacing: 1px;
 	}
 
 	.audio-container,
