@@ -468,10 +468,14 @@ function initCustomScrollbar() {
 
 window.addEventListener('load', initCustomScrollbar);
 
-// document.getElementById("backToTop").addEventListener("click", function(event) {
-// 	event.preventDefault(); 
-// 	window.scrollTo({
-// 		top: 0,
-// 		behavior: "smooth" 
-// 	});
-// });
+// sroll bar//
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollBar = document.getElementById("scrollBar");
+
+    window.addEventListener("scroll", function () {
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrollPercent = (scrollTop / scrollHeight) * 100;
+        scrollBar.style.width = scrollPercent + "%"; // Updates the progress bar width
+    });
+});
