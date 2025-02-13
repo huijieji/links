@@ -70,7 +70,7 @@ h3 {
 }
 
 .header h1 {
-	font-size: 9rem;
+	font-size: 10rem;
 	animation: breathing 3s ease-in-out infinite;
 	margin-bottom: 50px;
 	text-align: center;
@@ -79,9 +79,11 @@ h3 {
 .header h2 {
 	width: 60%;
 	min-width: 375px;
-	font-size: 2rem;
+	font-size: 1.2rem;
 	text-align: center;
 	font-family: poppins;
+	padding-top: 10px;
+	color:lightgrey;
 }
 
 @keyframes breathing {
@@ -670,7 +672,7 @@ video {
 	}
 
 	.header h2 {
-		font-size: 1.5rem;
+		font-size: 1rem;
 		line-height: 1.8rem;
 	}
 
