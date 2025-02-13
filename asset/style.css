@@ -29,7 +29,8 @@ body {
 }
 
 p {
-	font-weight: 100;
+	font-weight: 300;
+	line-height:25px;
 }
 
 h3 {
@@ -70,8 +71,8 @@ h3 {
 }
 
 .header h1 {
-	font-size: 10rem;
-	animation: breathing 3s ease-in-out infinite;
+	font-size: 11rem;
+	animation: breathing 5s ease-in-out infinite;
 	margin-bottom: 50px;
 	text-align: center;
 }
@@ -406,12 +407,14 @@ video {
 	}
 
 	.header h1 {
-		font-size: 4rem;
+		font-size: 9rem;
 		margin-bottom: 40px;
+		line-height: 100px;
 	}
 
 	.header h2 {
-		font-size: 1rem;
+		font-size: 1.3rem;
+		line-height: 30px;
 	}
 
 	.hover-content {
@@ -466,8 +469,9 @@ video {
 	}
 
 	.header h1 {
-		font-size: 3.5rem;
+		font-size: 6rem;
 		margin-bottom: 30px;
+		line-height: 20px;
 	}
 
 	.header h2 {
@@ -517,7 +521,7 @@ video {
 	}
 }
 
-/* @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
 	.channel-blocks {
 		grid-template-columns: repeat(2, 100px);
 		grid-auto-rows: 100px;
@@ -542,12 +546,13 @@ video {
 	}
 
 	.header h1 {
-		font-size: 2.5rem;
+		font-size: 6rem;
 		margin-bottom: 20px;
+
 	}
 
 	.header h2 {
-		font-size: 0.8rem;
+		font-size: 1rem;
 	}
 
 	.body {
@@ -609,9 +614,9 @@ video {
 		font-size: 1rem;
 		line-height: 24px;
 	}
-} */
+}
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 700px) {
 
 	.body {
 		height: auto;
@@ -742,6 +747,6 @@ video {
 	}
 
 	.top a {
-		font-size: 22px !important;
+		font-size: 22px；
 	}
 }
