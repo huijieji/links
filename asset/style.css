@@ -73,6 +73,7 @@ h3 {
 	font-size: 9rem;
 	animation: breathing 3s ease-in-out infinite;
 	margin-bottom: 50px;
+	text-align: center;
 }
 
 .header h2 {
@@ -80,6 +81,7 @@ h3 {
 	min-width: 375px;
 	font-size: 2rem;
 	text-align: center;
+	font-family: poppins;
 }
 
 @keyframes breathing {
@@ -122,7 +124,7 @@ h3 {
 
 .audio-title {
 	color: white;
-	font-size: 1.2rem;
+	font-size: 2rem;
 	text-align: center;
 	margin-bottom: 20px;
 }
@@ -140,7 +142,7 @@ h3 {
 	height: 50px;
 	border-radius: 50%;
 	color: black;
-	font-size: 18px;
+	font-size: 28px;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -189,10 +191,10 @@ h3 {
 	right: 0;
 	width: 30px;
 	height: 30px;
-	background: rgba(255, 255, 255, 0.2);
+	background: rgb(255, 255, 255);
 	border: none;
 	border-radius: 50%;
-	color: white;
+	color: black;
 	font-size: 20px;
 	cursor: pointer;
 	display: flex;
@@ -320,13 +322,18 @@ video {
 	transform-origin: center center;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	font-weight: 100 !important;
-	font-size: 18px;
 }
 
 .hover-content h3 {
-	font-size: 1.5rem;
+	font-size: 2rem;
 	margin-bottom: 10px;
 }
+
+.hover-content p {
+	font-size: 1rem;
+	font-family: "Poppins", sans-serif;
+}
+
 
 .image-item:hover .hover-content {
 	display: block;
@@ -354,22 +361,22 @@ video {
 	width: 400px;
 }
 
-.footer {
-	position: absolute;
-	bottom: 80px;
+.modal-backdrop {
+	position: fixed;
+	top: 0;
 	left: 0;
-	right: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	z-index: 999;
+	opacity: 0;
+	transition: opacity 0.3s ease;
 }
 
-.footer p {
-	font-size: 1.2rem;
-	text-align: center;
-	line-height: 30px;
-
+.modal-backdrop.active {
+	opacity: 1;
 }
 
 @media screen and (max-width: 1200px) {
@@ -508,7 +515,7 @@ video {
 	}
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
 	.channel-blocks {
 		grid-template-columns: repeat(2, 100px);
 		grid-auto-rows: 100px;
@@ -600,38 +607,71 @@ video {
 		font-size: 1rem;
 		line-height: 24px;
 	}
-}
+} */
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1200px) {
+
+	.body {
+		height: auto;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.scroll-container {
+		overflow-y: visible;
+		overflow-x: hidden;
+		height: auto;
+		margin-bottom: 20px;
+	}
+
 	.channel-blocks {
-		grid-template-columns: repeat(2, 80px);
-		grid-auto-rows: 80px;
+		display: grid;
+		grid-template-columns: repeat(2, 150px);
+		grid-auto-flow: row;
+		grid-auto-rows: 150px;
 		gap: 8px;
-		padding: 20px 50px;
+		padding: 20px;
+		width: 100%;
+		height: auto;
+		justify-content: center;
 	}
 
 	.image-item {
-		width: 80px;
-		height: 80px;
+		width: 150px;
+		height: 150px;
+	}
+
+	.hover-content {
+		width: 140px;
+		right: 50%;
+		transform: translateX(50%) scaleY(0);
+	}
+
+	.image-item:hover .hover-content {
+		transform: translateX(50%) scaleY(1);
 	}
 
 	.image-item.large {
-		width: 160px;
-		height: 160px;
+		width: 300px;
+		height: 300px;
+		grid-column: span 2;
 	}
 
 	.header {
 		margin-top: 20px;
 		margin-bottom: 30px;
+		padding: 0 20px;
 	}
 
 	.header h1 {
-		font-size: 2rem;
+		font-size: 6rem;
 		margin-bottom: 10px;
+		line-height: 4.5rem;
 	}
 
 	.header h2 {
-		font-size: 0.6rem;
+		font-size: 1.5rem;
+		line-height: 1.8rem;
 	}
 
 	.hover-content {
@@ -648,10 +688,6 @@ video {
 
 	.image-item.large .hover-content {
 		width: 160px;
-	}
-
-	.top a {
-		font-size: 16px;
 	}
 
 	.audio-container,
@@ -675,17 +711,7 @@ video {
 	}
 
 	.custom-scrollbar {
-		width: 95%;
-		bottom: 40px;
-	}
-
-	.footer {
-		bottom: 50px;
-	}
-
-	.footer p {
-		font-size: 1rem;
-		line-height: 24px;
+		display: none;
 	}
 
 	.close-button {
@@ -699,20 +725,21 @@ video {
 		background: rgba(255, 255, 255, 0.4);
 	}
 
-	.custom-scrollbar {
-		bottom: 400px;
+	.hover-content {
+		width: 140px;
+		right: 50%;
+		transform: translateX(50%) scaleY(0);
 	}
 
-	.footer {
-		bottom: 320px;
-	}
-
-	.footer p {
-		font-size: 0.5rem;
-		line-height: 24px;
+	.image-item:hover .hover-content {
+		transform: translateX(50%) scaleY(1);
 	}
 
 	.top {
-		font-size: 10px !important;
+		padding: 30px 20px;
+	}
+
+	.top a {
+		font-size: 22px !important;
 	}
 }

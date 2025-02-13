@@ -182,6 +182,11 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
         </div>
     `;
 
+	if (type === 'Audio') {
+		blockItem.querySelector('img').src = 'asset/audio/3aaf8108d1303561c35ef707abdf28f.jpg';
+		// blockItem.querySelector('img').src = 'asset/audio/image 3.png';
+	}
+
 	blockItem.addEventListener('mouseenter', () => {
 		blockItems.forEach(item => {
 			if (item !== blockItem) {
@@ -223,11 +228,22 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
 	blockItems.push(blockItem);
 }
 
+const createBackdrop = () => {
+	const backdrop = document.createElement('div');
+	backdrop.className = 'modal-backdrop';
+	document.body.appendChild(backdrop);
+	setTimeout(() => backdrop.classList.add('active'), 10);
+
+	return backdrop;
+};
+
+
 const linkTo = (url) => {
 	window.open(url, '_blank');
 }
 
 const showVideo = (url) => {
+	const backdrop = createBackdrop();
 	const body = document.querySelector('body');
 	const videoContainer = document.createElement('div');
 	videoContainer.className = 'video-container';
@@ -243,6 +259,14 @@ const showVideo = (url) => {
 		body.removeChild(videoContainer);
 	};
 
+	closeButton.onclick = () => {
+		backdrop.classList.remove('active');
+		setTimeout(() => {
+			body.removeChild(videoContainer);
+			body.removeChild(backdrop);
+		}, 300);
+	};
+
 	videoContainer.appendChild(video);
 	videoContainer.appendChild(closeButton);
 	body.appendChild(videoContainer);
@@ -250,6 +274,7 @@ const showVideo = (url) => {
 }
 
 const showAudio = (title, url) => {
+	const backdrop = createBackdrop();
 	const body = document.querySelector('body');
 	const audioContainer = document.createElement('div');
 	audioContainer.className = 'audio-container';
@@ -319,6 +344,14 @@ const showAudio = (title, url) => {
 		timeInfo.querySelector('.current-time').textContent = formatTime(audio.currentTime);
 	});
 
+	closeButton.onclick = () => {
+	backdrop.classList.remove('active');
+		setTimeout(() => {
+			body.removeChild(audioContainer);
+			body.removeChild(backdrop);
+		}, 300);
+	};
+
 	playButton.onclick = () => {
 		if (audio.paused) {
 			audio.play();
@@ -336,6 +369,7 @@ const showAudio = (title, url) => {
 };
 
 const showPDF = (url) => {
+	const backdrop = createBackdrop();
 	const body = document.querySelector('body');
 	const pdfContainer = document.createElement('div');
 	pdfContainer.className = 'pdf-container';
@@ -351,6 +385,14 @@ const showPDF = (url) => {
 	closeButton.innerHTML = '×';
 	closeButton.onclick = () => {
 		body.removeChild(pdfContainer);
+	};
+
+	closeButton.onclick = () => {
+		backdrop.classList.remove('active');
+		setTimeout(() => {
+			body.removeChild(pdfContainer);
+			body.removeChild(backdrop);
+		}, 300);
 	};
 
 	pdfContainer.appendChild(closeButton);
