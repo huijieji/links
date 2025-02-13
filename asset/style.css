@@ -54,9 +54,10 @@ h3 {
 	text-decoration: none;
 	color: var(--color);
 	transition: all 0.3s;
-	font-size: 40px;
-	letter-spacing: 1px;
-	color:lightgrey;
+	font-size: 35px;
+	letter-spacing: 0.7px;
+	color:rgb(149, 149, 149);
+	
 }
 
 .top a:hover {
@@ -497,7 +498,6 @@ video {
 
 	.top a {
 		font-size: 24px;
-		letter-spacing: 1px;
 	}
 
 	.audio-container,
@@ -583,7 +583,6 @@ video {
 
 	.top a {
 		font-size: 25px;
-		letter-spacing: 1px;
 	}
 
 	.audio-container,
@@ -675,14 +674,16 @@ video {
 	}
 
 	.header h1 {
-		font-size: 6rem;
+		font-size: 7rem;
 		margin-bottom: 10px;
-		line-height: 4.5rem;
+		line-height: 5.2rem;
 	}
 
 	.header h2 {
 		font-size: 1rem;
-		line-height: 1.8rem;
+		line-height: 1.5rem;
+		padding:10px;
+		
 	}
 
 	.hover-content {

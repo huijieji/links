@@ -467,3 +467,11 @@ function initCustomScrollbar() {
 }
 
 window.addEventListener('load', initCustomScrollbar);
+
+// document.getElementById("backToTop").addEventListener("click", function(event) {
+// 	event.preventDefault(); 
+// 	window.scrollTo({
+// 		top: 0,
+// 		behavior: "smooth" 
+// 	});
+// });
