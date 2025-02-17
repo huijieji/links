@@ -488,7 +488,7 @@ video {
 	}
 
 	.hover-content h3 {
-		font-size: 1rem;
+		font-size: 1.8rem;
 		margin-bottom: 8px;
 	}
 
@@ -573,7 +573,7 @@ video {
 	}
 
 	.hover-content h3 {
-		font-size: 0.9rem;
+		font-size: 1.8rem;
 		margin-bottom: 5px;
 	}
 
@@ -618,6 +618,16 @@ video {
 		line-height: 24px;
 	}
 }
+
+p {
+	font-weight: 300;
+	line-height:22px;
+}
+
+h3 {
+	font-size: 40px;
+}
+
 
 @media screen and (max-width: 700px) {
 
@@ -694,7 +704,7 @@ video {
 	}
 
 	.hover-content h3 {
-		font-size: 0.8rem;
+		font-size: 1.8rem;
 		margin-bottom: 4px;
 	}
 
@@ -754,4 +764,5 @@ video {
 	.top a {
 		font-size: 22px；
 	}
+
 }
