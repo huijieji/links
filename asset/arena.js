@@ -26,7 +26,7 @@ let channelSlug = 'hip-hop-creativity' // The "slug" is just the end of the URL
 // 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
 // }
 
-
+// learn it from deepseek//
 let classify = (block) => {
 	switch (block.class) {
 		case 'Link':
@@ -516,16 +516,3 @@ function initCustomScrollbar() {
 	});
 }
 
-window.addEventListener('load', initCustomScrollbar);
-
-// sroll bar//
-document.addEventListener("DOMContentLoaded", function () {
-	const scrollBar = document.getElementById("scrollBar");
-
-	window.addEventListener("scroll", function () {
-		let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-		let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-		let scrollPercent = (scrollTop / scrollHeight) * 100;
-		scrollBar.style.width = scrollPercent + "%"; // Updates the progress bar width
-	});
-});
