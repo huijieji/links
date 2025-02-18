@@ -30,7 +30,7 @@ body {
 
 p {
 	font-weight: 300;
-	line-height:25px;
+	line-height: 25px;
 }
 
 h3 {
@@ -56,8 +56,8 @@ h3 {
 	transition: all 0.3s;
 	font-size: 35px;
 	letter-spacing: 0.7px;
-	color:rgb(149, 149, 149);
-	
+	color: rgb(149, 149, 149);
+
 }
 
 .top a:hover {
@@ -87,7 +87,7 @@ h3 {
 	text-align: center;
 	font-family: poppins;
 	padding-top: 10px;
-	color:lightgrey;
+	color: lightgrey;
 }
 
 @keyframes breathing {
@@ -385,6 +385,10 @@ video {
 	opacity: 1;
 }
 
+footer {
+	display: none;
+}
+
 @media screen and (max-width: 1200px) {
 	.channel-blocks {
 		grid-template-columns: repeat(4, 150px);
@@ -440,10 +444,6 @@ video {
 
 	.custom-scrollbar {
 		bottom: 200px;
-	}
-
-	.footer {
-		bottom: 100px;
 	}
 }
 
@@ -567,7 +567,7 @@ video {
 	}
 
 	.hover-content {
-		width: 160px;
+		width: 300px;
 		font-size: 12px;
 		padding: 8px;
 	}
@@ -609,19 +609,18 @@ video {
 		bottom: 300px;
 	}
 
-	.footer {
+	footer {
+		display: block;
 		bottom: 180px;
-	}
-
-	.footer p {
-		font-size: 1rem;
-		line-height: 24px;
+		text-align: right !important;
+		font-family: poppins;
+		font-size: 14px;
 	}
 }
 
 p {
 	font-weight: 300;
-	line-height:22px;
+	line-height: 22px;
 }
 
 h3 {
@@ -662,8 +661,8 @@ h3 {
 	}
 
 	.hover-content {
-		width: 140px;
-		right: 50%;
+		width: 150px;
+		right: 37%;
 		transform: translateX(50%) scaleY(0);
 	}
 
@@ -692,15 +691,13 @@ h3 {
 	.header h2 {
 		font-size: 1rem;
 		line-height: 1.5rem;
-		padding:10px;
-		
+		padding: 10px;
+
 	}
 
 	.hover-content {
-		width: 140px;
 		font-size: 11px;
 		padding: 6px;
-		right: 40%;
 	}
 
 	.hover-content h3 {
@@ -709,7 +706,7 @@ h3 {
 	}
 
 	.image-item.large .hover-content {
-		width: 160px;
+		width: 300px;
 	}
 
 	.audio-container,
@@ -745,16 +742,6 @@ h3 {
 
 	.close-button:hover {
 		background: rgba(255, 255, 255, 0.4);
-	}
-
-	.hover-content {
-		width: 140px;
-		right: 50%;
-		transform: translateX(50%) scaleY(0);
-	}
-
-	.image-item:hover .hover-content {
-		transform: translateX(50%) scaleY(1);
 	}
 
 	.top {

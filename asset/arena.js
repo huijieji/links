@@ -222,6 +222,11 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
 				showPDF(fileUrl);
 			});
 			break
+		case 'Image':
+			blockItem.addEventListener('click', () => {
+				showImg(imageUrl);
+			});
+			break
 	}
 
 	channelBlocks.appendChild(blockItem);
@@ -345,7 +350,7 @@ const showAudio = (title, url) => {
 	});
 
 	closeButton.onclick = () => {
-	backdrop.classList.remove('active');
+		backdrop.classList.remove('active');
 		setTimeout(() => {
 			body.removeChild(audioContainer);
 			body.removeChild(backdrop);
@@ -396,6 +401,51 @@ const showPDF = (url) => {
 	};
 
 	pdfContainer.appendChild(closeButton);
+}
+
+function showImg(url) {
+	let div = document.createElement('div');
+	div.style.position = 'fixed';
+	div.style.top = '0';
+	div.style.left = '0';
+	div.style.width = '100%';
+	div.style.height = '100%';
+	div.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+	div.style.zIndex = '9999';
+	div.onclick = () => {
+		document.body.removeChild(div);
+	}
+	let img = document.createElement('img');
+	img.src = url;
+	img.style.maxWidth = '60%';
+	img.style.maxHeight = '75%';
+	img.style.position = 'fixed';
+	img.style.top = '50%';
+	img.style.left = '50%';
+	img.style.transform = 'translate(-50%, -50%)';
+	img.style.zIndex = '9999';
+	img.style.border = '10px solid white';
+	const closeButton = document.createElement('button');
+	closeButton.className = 'close-button';
+	closeButton.innerHTML = '×';
+	closeButton.style.position = 'fixed';
+	closeButton.style.top = '10px';
+	closeButton.style.right = '10px';
+	closeButton.style.zIndex = '9999999';
+	closeButton.style.backgroundColor = 'white';
+	closeButton.style.border = 'none';
+	closeButton.style.padding = '5px 10px';
+	closeButton.style.borderRadius = '50%';
+	closeButton.style.cursor = 'pointer';
+	closeButton.onclick = () => {
+		document.body.removeChild(img);
+	}
+	img.onclick = () => {
+		document.body.removeChild(img);
+	}
+	div.appendChild(img);
+	div.appendChild(closeButton);
+	document.body.appendChild(div);
 }
 
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
@@ -470,12 +520,12 @@ window.addEventListener('load', initCustomScrollbar);
 
 // sroll bar//
 document.addEventListener("DOMContentLoaded", function () {
-    const scrollBar = document.getElementById("scrollBar");
+	const scrollBar = document.getElementById("scrollBar");
 
-    window.addEventListener("scroll", function () {
-        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        let scrollPercent = (scrollTop / scrollHeight) * 100;
-        scrollBar.style.width = scrollPercent + "%"; // Updates the progress bar width
-    });
+	window.addEventListener("scroll", function () {
+		let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		let scrollPercent = (scrollTop / scrollHeight) * 100;
+		scrollBar.style.width = scrollPercent + "%"; // Updates the progress bar width
+	});
 });
