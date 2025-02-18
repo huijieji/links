@@ -60,99 +60,6 @@ let classify = (block) => {
 	}
 }
 
-// 	// Images!
-// 	else if (block.class == 'Image') {
-// 		let imageItem = `
-//     <div class="image-item">
-//       <img src="${block.image.original.url}" alt="${block.title || 'Arena image'}">
-//       <div class="hover-content">
-//         <h3>${block.title || ''}</h3>
-//         ${block.description_html || ''}
-//       </div>
-//     </div>
-//   `;
-// 		channelBlocks.insertAdjacentHTML('beforeend', imageItem);
-// 	}
-
-// 	// Text!
-// 	else if (block.class == 'Text') {
-// 		let textItem = `
-//         <li>
-//             <p><em>Text</em></p>
-//             ${block.content_html}
-//             ${block.description_html || ''}
-//         </li>
-//     `;
-// 		channelBlocks.insertAdjacentHTML('beforeend', textItem);
-// 	}
-
-// 	// Uploaded (not linked) media…
-// 	else if (block.class == 'Attachment') {
-// 		let attachment = block.attachment.content_type // Save us some repetition
-
-// 		// Uploaded videos!
-// 		if (attachment.includes('video')) {
-// 			// …still up to you, but we'll give you the `video` element:
-// 			let videoItem =
-// 				`
-// 				<li>
-// 					<p><em>Video</em></p>
-// 					<video controls src="${block.attachment.url}"></video>
-// 				</li>
-// 				`
-// 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-// 			// More on video, like the `autoplay` attribute:
-// 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-// 		}
-
-// 		// Uploaded PDFs!
-// 		else if (attachment.includes('pdf')) {
-// 			let pdfItem = `
-//         <li>
-//             <p><em>PDF</em></p>
-//             <iframe src="${block.attachment.url}"></iframe>
-//             <p><a href="${block.attachment.url}">查看PDF ↗</a></p>
-//         </li>
-//     `
-// 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
-// 		}
-
-
-// 		// Uploaded audio!
-// 		else if (attachment.includes('audio')) {
-// 			let audioItem = `
-//         <li>
-//             <p><em>Audio</em></p>
-//             <audio controls src="${block.attachment.url}"></audio>
-//         </li>
-//     `
-// 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-// 		}
-// 	}
-
-// 	// Linked media…
-// 	else if (block.class == 'Media') {
-// 		let embed = block.embed.type
-
-// 		// Linked video!
-// 		if (embed.includes('video')) {
-// 			// …still up to you, but here's an example `iframe` element:
-// 			let linkedVideoItem =
-// 				`
-// 				<li>
-// 					<p><em>Linked Video</em></p>
-// 					${block.embed.html}
-// 				</li>
-// 				`
-// 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-// 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-// 		}
-
-// 	}
-// }
-
-
-
 // It's always good to credit your work:
 let renderUser = (user, container) => { // You can have multiple arguments for a function!
 	let userAddress =
@@ -166,8 +73,8 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 	container.insertAdjacentHTML('beforeend', userAddress)
 }
 
-const blockItems = [];
 
+const blockItems = [];
 const renderBlock = (type, title, description, imageUrl, fileUrl) => {
 	const channelBlocks = document.querySelector('.channel-blocks');
 	const isLarge = channelBlocks.children.length % 5 === 0;
@@ -238,7 +145,6 @@ const createBackdrop = () => {
 	backdrop.className = 'modal-backdrop';
 	document.body.appendChild(backdrop);
 	setTimeout(() => backdrop.classList.add('active'), 10);
-
 	return backdrop;
 };
 
