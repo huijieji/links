@@ -410,28 +410,6 @@ footer {
     justify-content: center;
 }
 
-/* 图片样式 */
-.img-overlay img {
-    max-width: 60%;
-    max-height: 75%;
-    border: 10px solid white;
-}
-
-/* 关闭按钮 */
-.img-overlay .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    line-height: 1;
-    text-align: center;
-}
-
 
 /* Responsive design adjustments */
 @media screen and (max-width: 1200px) {
