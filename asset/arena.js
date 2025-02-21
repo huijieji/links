@@ -875,3 +875,4 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 // Initialize scrollbar when document is loaded
 document.addEventListener('DOMContentLoaded', initCustomScrollbar);
+
