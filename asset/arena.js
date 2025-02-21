@@ -499,42 +499,50 @@ let classify = (block) => {
 const renderBlock = (type, title, description, imageUrl, fileUrl) => {
     const channelBlocks = document.querySelector('.channel-blocks');
     const isLarge = channelBlocks.children.length % 5 === 0;
+    const isMobile = window.innerWidth <= 768;
 
     const blockItem = document.createElement('div');
     blockItem.className = `image-item ${isLarge ? 'large' : ''}`;
 
-    // Process the description with markdown-it if available
-    const processedDescription = window.markdownit ? 
-        window.markdownit().render(description || '') : 
-        description || '';
-    
-    blockItem.innerHTML = `
-        <img src="${imageUrl || ''}" alt="${title || ''}">
-        <div class="hover-content">
-            ${title ? `<h3>${title}</h3>` : ''}
-            ${processedDescription ? `<div class="description-content">${processedDescription}</div>` : ''}
-        </div>
-    `;
+    // 根据设备类型生成不同的HTML结构
+    if (isMobile) {
+        blockItem.innerHTML = `<img src="${imageUrl || ''}" alt="${title || ''}">`;
+    } else {
+        // 桌面端保持原有的hover效果结构
+        const processedDescription = window.markdownit ? 
+            window.markdownit().render(description || '') : 
+            description || '';
+        
+        blockItem.innerHTML = `
+            <img src="${imageUrl || ''}" alt="${title || ''}">
+            <div class="hover-content">
+                ${title ? `<h3>${title}</h3>` : ''}
+                ${processedDescription ? `<div class="description-content">${processedDescription}</div>` : ''}
+            </div>
+        `;
+    }
 
     // Set default image for audio files
     if (type === 'Audio') {
         blockItem.querySelector('img').src = 'asset/audio/3aaf8108d1303561c35ef707abdf28f.jpg';
     }
 
-    // Hover effects
-    blockItem.addEventListener('mouseenter', () => {
-        blockItems.forEach(item => {
-            if (item !== blockItem) {
-                item.style.opacity = '0.5';
-            }
+    // Hover effects - 只在桌面端添加
+    if (!isMobile) {
+        blockItem.addEventListener('mouseenter', () => {
+            blockItems.forEach(item => {
+                if (item !== blockItem) {
+                    item.style.opacity = '0.5';
+                }
+            });
         });
-    });
 
-    blockItem.addEventListener('mouseleave', () => {
-        blockItems.forEach(item => {
-            item.style.opacity = '1';
+        blockItem.addEventListener('mouseleave', () => {
+            blockItems.forEach(item => {
+                item.style.opacity = '1';
+            });
         });
-    });
+    }
 
     // Click handlers for different types
     switch (type) {
@@ -551,7 +559,11 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
             blockItem.addEventListener('click', () => showPDF(fileUrl));
             break;
         case 'Image':
-            blockItem.addEventListener('click', () => showImg(imageUrl));
+            if (isMobile) {
+                blockItem.addEventListener('click', () => showImg(imageUrl, title, description));
+            } else {
+                blockItem.addEventListener('click', () => showImg(imageUrl));
+            }
             break;
     }
 
@@ -725,24 +737,68 @@ const showPDF = (url) => {
 }
 
 // Function to display image modal
-const showImg = (url) => {
-    const div = document.createElement('div');
+const showImg = (url, title, description) => {
+    let div = document.createElement('div');
     div.className = 'img-overlay';
 
-    const img = document.createElement('img');
+    let wrapper = document.createElement('div');
+    wrapper.className = 'image-wrapper';
+
+    let img = document.createElement('img');
+    img.style.opacity = '0';
     img.src = url;
 
-    const closeButton = document.createElement('button');
+    let closeButton = document.createElement('button');
     closeButton.className = 'close-button';
     closeButton.innerHTML = '×';
+    closeButton.style.opacity = '0';
 
-    closeButton.onclick = () => document.body.removeChild(div);
+    // 修复移动端内容显示问题
+    let mobileContent = document.createElement('div');
+    mobileContent.className = 'mobile-content';
+    if (title || description) {
+        if (title) {
+            let titleElement = document.createElement('h3');
+            titleElement.textContent = title;
+            mobileContent.appendChild(titleElement);
+        }
+        if (description) {
+            let descElement = document.createElement('div');
+            descElement.className = 'description-content';
+            // 添加Markdown解析支持
+            if(window.markdownit) {
+                descElement.innerHTML = window.markdownit().render(description);
+            } else {
+                descElement.textContent = description;
+            }
+            mobileContent.appendChild(descElement);
+        }
+        div.appendChild(mobileContent);
+        
+        // 确保动画生效
+        requestAnimationFrame(() => {
+            mobileContent.classList.add('active');
+        });
+    }
+
+    img.onload = () => {
+        img.style.opacity = '1';
+        closeButton.style.opacity = '1';
+    };
+
+    closeButton.onclick = (e) => {
+        e.stopPropagation();
+        document.body.removeChild(div);
+    };
+    
     div.onclick = () => document.body.removeChild(div);
+    img.onclick = (e) => e.stopPropagation();
 
-    div.appendChild(img);
-    div.appendChild(closeButton);
+    wrapper.appendChild(img);
+    wrapper.appendChild(closeButton);
+    div.appendChild(wrapper);
     document.body.appendChild(div);
-}
+};
 
 // Initialize custom scrollbar
 function initCustomScrollbar() {
