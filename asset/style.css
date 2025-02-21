@@ -1106,3 +1106,21 @@ h3 {
     }
 }
 
+
+.image-item img {
+    box-shadow: 0 0 15px rgba(155, 155, 155, 0.3);
+    animation: glowOnScroll 2.5s ease-in-out infinite;
+}
+
+@keyframes glowOnScroll {
+    0% {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(64, 64, 64, 0.5),
+                    0 0 50px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+}
