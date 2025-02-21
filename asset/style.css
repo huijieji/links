@@ -50,6 +50,7 @@ h3 {
 	justify-content: space-between;
 	row-gap: var(--gutter);
 	padding: var(--gutter);
+	content: attr(data-text);
 }
 
 .top a {
@@ -58,8 +59,8 @@ h3 {
 	transition: all 0.3s;
 	font-size: 35px;
 	letter-spacing: 0.7px;
-	color: rgb(149, 149, 149);
-
+	color: rgb(240, 240, 240);
+	
 }
 
 .top a:hover {
@@ -512,6 +513,27 @@ video {
 	transition: border-radius 0.5s;
 	padding:2.5px;
 }
+
+/* Image animation  */
+.image-item img {
+    animation: flashEffect 2.5s infinite alternate;
+}
+
+@keyframes flashEffect {
+    0% {
+        filter: brightness(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        filter: brightness(1.5);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        filter: brightness(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+}
+
 
 @media screen and (min-width: 769px) {
     .hover-content {
