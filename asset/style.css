@@ -272,9 +272,9 @@ video {
 .channel-blocks {
 	display: grid;
 	grid-template-columns: repeat(6, 330px);
-	grid-auto-rows: 400px;
+	grid-auto-rows: 380px;
 	gap: 0px;
-	padding: 50px 30px;
+	padding: 50px 100px;
 	height: 100%;
 	grid-auto-flow: column dense;
 	align-items: center;
@@ -324,6 +324,7 @@ video {
 	object-fit: cover;
 	border-radius: 50%;
 	transition: border-radius 0.5s;
+	padding:2.5px;
 }
 
 @media screen and (min-width: 769px) {
