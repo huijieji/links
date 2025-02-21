@@ -82,7 +82,7 @@ h3 {
 	animation: breathing 6s ease-in-out infinite;
 	margin-bottom: 50px;
 	text-align: center;
-	line-height: 10rem;
+	line-height: 12rem;
 }
 
 .header h2 {
@@ -562,9 +562,9 @@ footer {
 	}
 
 	.header h1 {
-		font-size: 9rem;
+		font-size: 10rem;
 		margin-bottom: 40px;
-		line-height: 100px;
+		line-height: 7rem;
 	}
 
 	.header h2 {
