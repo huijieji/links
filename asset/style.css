@@ -939,7 +939,7 @@ footer {
 
 	.audio-container,
 	.video-container video {
-		width: 250px;
+		width: 300px;
 	}
 
 	.audio-container {
@@ -1065,7 +1065,7 @@ h3 {
 
 	.audio-container,
 	.video-container video {
-		width: 200px;
+		width: 320px;
 	}
 
 	.audio-container {
