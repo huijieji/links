@@ -511,24 +511,71 @@ video {
 
 /* Image animation  */
 .image-item img {
-    animation: flashEffect 2.5s infinite alternate;
+	animation: flashEffect 5.5s infinite alternate;
 }
 
 @keyframes flashEffect {
-    0% {
-        filter: brightness(1);
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-    }
-    50% {
-        filter: brightness(1.5);
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-    }
-    100% {
-        filter: brightness(1);
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-    }
+	0% {
+		filter: brightness(1);
+		box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+	}
+	50% {
+		filter: brightness(1.5);
+		box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+	}
+	100% {
+		filter: brightness(1);
+		box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+	}
 }
 
+.image-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+	transition: border-radius 0.5s;
+	padding: 2.5px;
+	animation: flashEffect 5.5s infinite alternate;
+}
+
+/* Big Image animation */
+.image-item.large img {
+	animation: 
+		rotateRecord 25s linear infinite,
+		flashEffect 5.5s infinite alternate;
+}
+
+.image-item.large:hover img {
+	animation: flashEffect 5.5s infinite alternate;
+	border-radius: 10px;
+}
+
+
+@keyframes rotateRecord {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+@keyframes flashEffect {
+	0% {
+		filter: brightness(1);
+		box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+	}
+	50% {
+		filter: brightness(1.5);
+		box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+	}
+	100% {
+		filter: brightness(1);
+		box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+	}
+}
 
 /* Responsive design adjustments */
 @media screen and (min-width: 769px) {
