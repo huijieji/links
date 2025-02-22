@@ -26,6 +26,7 @@ body {
 	justify-content: space-between;
 	background-color: #000000;
 	color: var(--color);
+	font-family: "New Amsterdam", serif;
 }
 
 
@@ -420,6 +421,7 @@ h1 {
 	height: 100%;
 }
 
+
 video {
 	width: 600px;
 	max-width: 90vw;
@@ -635,7 +637,7 @@ footer {
 }
 
 
-/* Responsive design adjustments */
+
 @media screen and (min-width: 769px) {
     .img-overlay .image-wrapper {
         position: relative;
@@ -681,7 +683,6 @@ footer {
 }
 }
 
-/* Responsive design adjustments */
 @media screen and (max-width: 768px) {
     .img-overlay .image-wrapper {
         position: fixed;
@@ -741,7 +742,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Responsive design adjustments */
 @media screen and (max-width: 1200px) {
 	.channel-blocks {
 		grid-template-columns: repeat(4, 250px);
@@ -967,7 +967,6 @@ footer {
 		text-align: center;
 		font-family: poppins;
 		font-size: 15px;
-		padding-bottom: 30px;
 	}
 }
 
@@ -979,6 +978,7 @@ p {
 h3 {
 	font-size: 40px;
 }
+
 
 /* Responsive design adjustments 550px */
 @media screen and (max-width: 550px) {
@@ -1107,7 +1107,6 @@ h3 {
 
 }
 
-/* Responsive design adjustments */
 @media screen and (max-width: 768px) {
     .img-overlay .image-wrapper {
         width: 85vw; 
