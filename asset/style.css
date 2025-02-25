@@ -1031,71 +1031,71 @@ h3 {
 /* Responsive design adjustments 550px */
 @media screen and (max-width: 550px) {
 
-	.body {
-		height: auto;
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
+.body {
+	height: auto;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.scroll-container {
+	overflow-y: visible;
+	overflow-x: hidden;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.channel-blocks {
+	display: grid;
+	grid-template-columns: repeat(2, 170px); 
+	grid-auto-flow: row;
+	grid-auto-rows: 150px;
+	gap: 25px;
+	padding: 20px;
+	width: 100%;
+	height: auto;
+	justify-content: center;
+}
+
+.image-item {
+	width: 170px;
+	height: 170px;
+}
+
+.hover-content {
+	width: 170px;
+	right: 37%;
+	transform: translateX(50%) scaleY(0);
+}
+
+.image-item:hover .hover-content {
+	transform: translateX(50%) scaleY(1);
+}
+
+.image-item.large {
+	width: 360px;
+	height: 360px;
+	grid-column: span 2;
 	}
 
-	.scroll-container {
-		overflow-y: visible;
-		overflow-x: hidden;
-		height: auto;
-		margin-bottom: 20px;
-	}
+.header {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	padding: 0 20px;
+}
 
-	.channel-blocks {
-		display: grid;
-		grid-template-columns: repeat(2, 170px); 
-		grid-auto-flow: row;
-		grid-auto-rows: 150px;
-		gap: 25px;
-		padding: 20px;
-		width: 100%;
-		height: auto;
-		justify-content: center;
-	}
+.header h1 {
+	font-size: 6.3rem;
+	margin-bottom: 10px;
+	line-height: 5.2rem;
+	padding-bottom: 25px;
+}
 
-	.image-item {
-		width: 170px;
-		height: 170px;
-	}
+.header h2 {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	padding: 10px;
 
-	.hover-content {
-		width: 170px;
-		right: 37%;
-		transform: translateX(50%) scaleY(0);
-	}
-
-	.image-item:hover .hover-content {
-		transform: translateX(50%) scaleY(1);
-	}
-
-	.image-item.large {
-		width: 360px;
-		height: 360px;
-		grid-column: span 2;
-	}
-
-	.header {
-		margin-top: 20px;
-		margin-bottom: 30px;
-		padding: 0 20px;
-	}
-
-	.header h1 {
-		font-size: 6.3rem;
-		margin-bottom: 10px;
-		line-height: 5.2rem;
-		padding-bottom: 25px;
-	}
-
-	.header h2 {
-		font-size: 1rem;
-		line-height: 1.5rem;
-		padding: 10px;
-
-	}
+}
 
 	.hover-content {
 		font-size: 11px;
