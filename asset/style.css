@@ -97,7 +97,7 @@ h3 {
 	min-width: 375px;
 	font-size: 1.5rem;
 	text-align: center;
-	font-family: poppins;
+	font-family:"Poppins", sans-serif;
 	padding-top: 6px;
 	color: rgb(198, 198, 198);
 	line-height:2.7rem;
@@ -106,31 +106,29 @@ h3 {
 /* h1 and h2 animations Ref：https://codepen.io 
  https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
  */
-h1 {
+ h1, h2 {
 	position: relative;
 	color: #fff;
+	padding: 0 10px;
+	text-transform: uppercase;
+	-webkit-text-stroke: 2px #fff;
+}
+
+h1 {
 	font-weight: 900;
 	letter-spacing: 2px;
-	text-transform: uppercase;
-	padding: 0 10px;
-	-webkit-text-stroke: 2px #fff;
-	text-shadow: 
-		4px 4px 0px #000,
-		7px 7px 0px rgba(255, 255, 255, 0.3);
- }
+	text-shadow: 4px 4px 0px #000, 7px 7px 0px rgba(255, 255, 255, 0.3);
+	animation: bounceIn 0.8s cubic-bezier(.17,.67,.83,.67) forwards;
+}
+
  
- h2 {
-	position: relative;
-	color: #fff;
+h2 {
 	font-weight: 700;
 	letter-spacing: 1px;
-	padding: 0 10px;
-	text-transform: uppercase;
 	-webkit-text-stroke: 1px #fff;
-	text-shadow: 
-		3px 3px 0px #000,
-		5px 5px 0px rgba(255, 255, 255, 0.2);
- }
+	text-shadow: 3px 3px 0px #000, 5px 5px 0px rgba(255, 255, 255, 0.2);
+	animation: slideIn 0.8s cubic-bezier(.17,.67,.83,.67) 0.2s forwards;
+}
 
 
  h1::before {
