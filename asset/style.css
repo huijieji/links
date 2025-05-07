@@ -1153,7 +1153,6 @@ h3 {
 	.top a {
 		font-size: 22px；
 	}
-
 }
 
 @media screen and (max-width: 768px) {
@@ -1204,11 +1203,23 @@ h3 {
 	grid-column: unset;
 	grid-row: unset;
   }
-  
+
 /* remove animation */
   .image-item.large img {
 	border-radius: 12px;
 	animation: none;
   }
-  
+
+    .image-item:hover {
+      border-radius: 12px;
+    }
+    
+    .image-item:hover img {
+      border-radius: 12px;
+    }
+
+	/* hide scrolling bar */
+    .custom-scrollbar {
+      display: none;
+    }
 }
