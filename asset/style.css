@@ -535,7 +535,7 @@ video {
 	object-fit: cover;
 	border-radius: 50%;
 	transition: border-radius 0.5s;
-	padding: 4.5px;
+	padding: 2.5px;
 	animation: flashEffect 5.5s infinite alternate;
 }
 
