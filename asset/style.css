@@ -13,8 +13,11 @@
 	--font-size: 32px;
 	--line-height: 100%;
 	--color: rgb(243, 243, 243);
-	--gutter: calc(var(--font-size) * 2)
+	--gutter: calc(var(--font-size) * 2);
+	--accent-color: rgb(238, 189, 26);
+	--accent-color-dark: rgb(187, 148, 20);
 }
+
 
 /* Body styles */
 body {
@@ -28,7 +31,6 @@ body {
 	color: var(--color);
 	font-family: "New Amsterdam", serif;
 }
-
 
 /* Paragraph Base Styles */
 p {
