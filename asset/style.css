@@ -129,6 +129,7 @@ h2 {
 	text-shadow: 3px 3px 0px #000, 5px 5px 0px rgba(255, 255, 255, 0.2);
 	animation: slideIn 0.8s cubic-bezier(.17,.67,.83,.67) 0.2s forwards;
 }
+
 h1::before, h2::before {
 	content: attr(data-text);
 	position: absolute;
@@ -147,6 +148,29 @@ h1::before {
 h2::before {
 	transform: translateX(-2px) translateY(-2px);
 	opacity: 0.7;
+}
+
+h1::after, h2::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 100%;
+	background: repeating-linear-gradient(45deg, #fff, #fff, #000, #000);
+	transform-origin: 0 50%;
+}
+
+h1::after {
+	height: 4px;
+	background-size: 20px;
+	animation: lineSlide 15s linear infinite;
+}
+
+h2::after {
+	height: 3px;
+	background-size: 16px;
+	transform-origin: 100% 50%;
+	animation: lineSlide 12s linear infinite reverse;
 }
 
  /* h1::before {
@@ -175,7 +199,7 @@ h2::before {
  } */
 
 
- h1 {
+ /* h1 {
 	animation: bounceIn 0.8s cubic-bezier(.17,.67,.83,.67) forwards;
  }
  
@@ -215,7 +239,7 @@ h2::before {
 		opacity: 1;
 		transform: translateX(0) skewX(0);
 	}
- }
+ } */
 
  /* @keyframes glitchText {
 	0% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
