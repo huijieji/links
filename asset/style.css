@@ -825,7 +825,7 @@ footer {
 
 /* Responsive design adjustments 550px */
 @media screen and (max-width: 550px) {
-	body {
+	.body {
 		height: auto;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
@@ -841,13 +841,27 @@ footer {
 		font-size: 6.3rem;
 		margin-bottom: 10px;
 		line-height: 5.2rem;
-		line-height: 25px;
+		padding-bottom: 25px;
 	}
 
 	.header h2 {
 		font-size: 1rem;
 		line-height: 1.5rem;
 		padding: 10px;
+	}
+
+	.audio-container,
+	.video-container video {
+		width: 320px;
+	}
+
+	.audio-container {
+		padding: 15px;
+	}
+
+	.pdf-container {
+		width: 250px;
+		height: 375px;
 	}
 
 	.play-button {
@@ -870,25 +884,14 @@ footer {
 	.top a {
 		font-size: 22px;
 	}
-
-	.audio-container,
-	.video-container video {
-		width: 320px;
-	}
-
-	.audio-container {
-		padding: 15px;
-	}
-
-	.pdf-container {
-		width: 250px;
-		height: 375px;
-	}
-
 }
 
 /* Responsive design adjustments 480px */
 @media screen and (max-width: 480px) {
+	.body {
+		padding: 10px;
+	}
+
 	.header {
 		margin-top: 30px;
 		margin-bottom: 40px;
@@ -897,10 +900,6 @@ footer {
 	.header h1 {
 		font-size: 6rem;
 		margin-bottom: 20px;
-	}
-
-	.body {
-		padding: 10px;
 	}
 
 	.audio-container,
