@@ -937,24 +937,6 @@ footer {
 
 /* Responsive design adjustments 550px */
 @media screen and (max-width: 550px) {
-	/* .channel-blocks {
-		grid-template-columns: repeat(3, 120px);
-		grid-auto-rows: 120px;
-		gap: 12px;
-	}
-
-	.image-item {
-		width: 120px;
-		height: 120px;
-	}
-
-	.image-item.large {
-		width: 240px;
-		height: 240px;
-		grid-column: span 2;
-		grid-row: span 2;
-	} */
-
 	body {
 		height: auto;
 		overflow-y: auto;
@@ -970,55 +952,51 @@ footer {
 	.header h1 {
 		font-size: 6.3rem;
 		margin-bottom: 10px;
-		
+		line-height: 5.2rem;
 		line-height: 20px;
 	}
 
 	.header h2 {
 		font-size: 1rem;
-	}
-
-	.hover-content {
-		width: 200px;
-		font-size: 14px;
+		line-height: 1.5rem;
 		padding: 10px;
 	}
 
-	.hover-content h3 {
-		font-size: 1.8rem;
-		margin-bottom: 8px;
+	.play-button {
+		width: 35px;
+		height: 35px;
+		font-size: 14px;
 	}
 
-	.image-item.large .hover-content {
-		width: 240px;
+	.close-button {
+		width: 25px;
+		height: 25px;
+		font-size: 16px;
+		top: -30px;
+	}
+
+	.top {
+		padding: 30px 20px;
 	}
 
 	.top a {
-		font-size: 24px;
+		font-size: 22px;
 	}
 
 	.audio-container,
 	.video-container video {
-		width: 300px;
+		width: 320px;
+	}
+
+	.audio-container {
+		padding: 15px;
 	}
 
 	.pdf-container {
-		width: 400px;
-		height: 600px;
+		width: 250px;
+		height: 375px;
 	}
 
-	.custom-scrollbar {
-		bottom: 30px;
-	}
-
-	.footer {
-		bottom: 150px;
-	}
-
-	.footer p {
-		font-size: 1.2rem;
-		line-height: 30px;
-	}
 }
 
 /* Responsive design adjustments 480px */
