@@ -129,9 +129,27 @@ h2 {
 	text-shadow: 3px 3px 0px #000, 5px 5px 0px rgba(255, 255, 255, 0.2);
 	animation: slideIn 0.8s cubic-bezier(.17,.67,.83,.67) 0.2s forwards;
 }
+h1::before, h2::before {
+	content: attr(data-text);
+	position: absolute;
+	left: 10px;
+	top: 0;
+	color: #000;
+	-webkit-text-stroke: 0;
+	clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
 
+h1::before {
+	animation: glitchText 0.4s infinite;
+	transform: translateX(-3px);
+}
 
- h1::before {
+h2::before {
+	transform: translateX(-2px) translateY(-2px);
+	opacity: 0.7;
+}
+
+ /* h1::before {
 	content: attr(data-text);
 	position: absolute;
 	left: 10px;
@@ -154,7 +172,7 @@ h2 {
 	clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
 	transform: translateX(-2px) translateY(-2px);
 	opacity: 0.7;
- }
+ } */
 
 
  h1 {
@@ -164,7 +182,7 @@ h2 {
  h2 {
 	animation: slideIn 0.8s cubic-bezier(.17,.67,.83,.67) 0.2s forwards;
  }
- 
+
  h1::before, h2::before {
 	content: attr(data-text);
 	position: absolute;
@@ -199,7 +217,7 @@ h2::before {
 	}
  }
 
- @keyframes glitchText {
+ /* @keyframes glitchText {
 	0% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
 	50% { clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); }
 	100% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
@@ -222,7 +240,7 @@ h2::before {
 		opacity: 1;
 		transform: scale(1) rotate(0);
 	}
- }
+ } */
 
  h1:hover {
 	animation: shake 0.5s ease-in-out;
