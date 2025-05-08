@@ -508,15 +508,24 @@ video {
 	object-fit: cover;
 	border-radius: 50%;
 	transition: border-radius 0.5s;
-	padding: .5px;
+	padding: 0.5px;
 	animation: flashEffect 5.5s infinite alternate;
 }
 
-/* Big Image animation */
+.image-item.large {
+	width: 660px;
+	height: 660px;
+	grid-column: span 2;
+	grid-row: span 2;
+	border-radius: 50%;
+}
+
+.image-item.large:hover {
+	border-radius: 10px;
+}
+
 .image-item.large img {
-	animation: 
-		rotateRecord 25s linear infinite,
-		flashEffect 5.5s infinite alternate;
+	animation: rotateRecord 25s linear infinite, flashEffect 5.5s infinite alternate;
 }
 
 .image-item.large:hover img {
@@ -524,31 +533,6 @@ video {
 	border-radius: 10px;
 }
 
-
-@keyframes rotateRecord {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-
-@keyframes flashEffect {
-	0% {
-		filter: brightness(1);
-		box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-	}
-	50% {
-		filter: brightness(1.5);
-		box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-	}
-	100% {
-		filter: brightness(1);
-		box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-	}
-}
 
 /* Responsive design adjustments */
 @media screen and (min-width: 769px) {
