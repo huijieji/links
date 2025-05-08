@@ -173,98 +173,6 @@ h2::after {
 	animation: lineSlide 12s linear infinite reverse;
 }
 
- /* h1::before {
-	content: attr(data-text);
-	position: absolute;
-	left: 10px;
-	top: 0;
-	color: #000;
-	-webkit-text-stroke: 0;
-	animation: glitchText 0.4s infinite;
-	clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-	transform: translateX(-3px);
- }
-
-
- h2::before {
-	content: attr(data-text);
-	position: absolute;
-	left: 10px;
-	top: 0;
-	color: #000;
-	-webkit-text-stroke: 0;
-	clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-	transform: translateX(-2px) translateY(-2px);
-	opacity: 0.7;
- } */
-
-
- /* h1 {
-	animation: bounceIn 0.8s cubic-bezier(.17,.67,.83,.67) forwards;
- }
- 
- h2 {
-	animation: slideIn 0.8s cubic-bezier(.17,.67,.83,.67) 0.2s forwards;
- }
-
- h1::before, h2::before {
-	content: attr(data-text);
-	position: absolute;
-	left: 10px;
-	top: 0;
-	color: #000;
-	-webkit-text-stroke: 0;
-	clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-}
-
-h1::before {
-	animation: glitchText 0.4s infinite;
-	transform: translateX(-3px);
-}
-
-h2::before {
-	transform: translateX(-2px) translateY(-2px);
-	opacity: 0.7;
-}
- @keyframes slideIn {
-	0% {
-		opacity: 0;
-		transform: translateX(-50px) skewX(-10deg);
-	}
-	60% {
-		opacity: 1;
-		transform: translateX(20px) skewX(5deg);
-	}
-	100% {
-		opacity: 1;
-		transform: translateX(0) skewX(0);
-	}
- } */
-
- /* @keyframes glitchText {
-	0% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
-	50% { clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); }
-	100% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
- }
-
- @keyframes bounceIn {
-	0% {
-		opacity: 0;
-		transform: scale(0.3) rotate(-5deg);
-	}
-	50% {
-		opacity: 0.9;
-		transform: scale(1.1) rotate(3deg);
-	}
-	80% {
-		opacity: 1;
-		transform: scale(0.89) rotate(-1deg);
-	}
-	100% {
-		opacity: 1;
-		transform: scale(1) rotate(0);
-	}
- } */
 
 /* heading hover effects */
  h1:hover {
@@ -327,19 +235,20 @@ h2:active {
 	75% { transform: rotate(-1deg) translate(-1px, 1px); }
  }
 
- h1:active {
-	transform: scale(0.95) translateY(2px);
-	text-shadow: 
-		2px 2px 0px #000,
-		4px 4px 0px rgba(255, 255, 255, 0.3);
- }
+ @keyframes lineSlide {
+	to { background-position: 200px 0; }
+}
 
- h2:active {
-	transform: scale(0.95) translateY(1px);
-	text-shadow: 
-		1px 1px 0px #000,
-		2px 2px 0px rgba(255, 255, 255, 0.3);
- }
+@keyframes flashEffect {
+	0% { filter: brightness(1); box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+	50% { filter: brightness(1.5); box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+	100% { filter: brightness(1); box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+}
+
+@keyframes rotateRecord {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
 
 /* Audio Player style */
 .audio-container {
@@ -888,6 +797,8 @@ footer {
 		bottom: 30px;
 	}
 }
+
+
 /* Responsive design adjustments 550px */
 @media screen and (max-width: 550px) {
 	.channel-blocks {
