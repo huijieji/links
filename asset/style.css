@@ -266,6 +266,7 @@ h2::before {
 	}
  } */
 
+/* heading hover effects */
  h1:hover {
 	animation: shake 0.5s ease-in-out;
 	color: #000;
@@ -286,6 +287,21 @@ h2::before {
 		-2px -2px 0px #fff,
 		2px 2px 0px rgba(0, 0, 0, 0.3);
  }
+
+/* heading active effects */
+h1:active {
+	transform: scale(0.95) translateY(2px);
+	text-shadow: 2px 2px 0px #000, 4px 4px 0px rgba(255, 255, 255, 0.3);
+}
+
+h2:active {
+	transform: scale(0.95) translateY(1px);
+	text-shadow: 1px 1px 0px #000, 2px 2px 0px rgba(255, 255, 255, 0.3);
+}
+
+
+
+
 
  @keyframes rubberBand {
 	0% { transform: scale(1); }
@@ -337,7 +353,8 @@ h2::before {
 	transform-origin: 100% 50%;
 	animation: lineSlide 12s linear infinite reverse;
  }
-
+ 
+/* animation frames */
  @keyframes lineSlide {
 	to {
 		background-position: 200px 0;
