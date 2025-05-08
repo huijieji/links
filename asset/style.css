@@ -656,6 +656,43 @@ video {
 }
 }
 
+/* Mobile overlay styles */
+.img-overlay .mobile-content {
+	position: fixed;
+	bottom: 10%;
+	left: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	padding: 25px 20px;
+	color: white;
+	font-family: "Poppins", sans-serif;
+	transform: translateY(100%);
+	transition: transform 0.3s ease;
+	z-index: 10000;
+}
+
+.img-overlay .mobile-content h3 {
+	font-size: 1.8rem;
+	margin-bottom: 15px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.img-overlay .mobile-content .description-content {
+	font-size: 0.9rem;
+	line-height: 1.5;
+	opacity: 0.9;
+	font-weight: 300;
+}
+
+.img-overlay .mobile-content.active {
+	transform: translateY(0);
+}
+
+/* Footer */
+footer {
+	display: none;
+}
 
 @media screen and (max-width: 768px) {
 	.hover-content {
@@ -687,14 +724,9 @@ video {
 	width: 400px;
 }
 
-
-
 footer {
 	display: none;
 }
-
-
-
 
 @media screen and (max-width: 768px) {
     .img-overlay .image-wrapper {
@@ -889,6 +921,7 @@ footer {
 		line-height: 30px;
 	}
 }
+
 /* Responsive design adjustments 480px */
 @media screen and (max-width: 480px) {
 	.channel-blocks {
