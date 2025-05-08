@@ -534,7 +534,7 @@ video {
 }
 
 
-/* Responsive design adjustments */
+	/*  hover content  */
 @media screen and (min-width: 769px) {
 	.hover-content {
 	position: absolute;
@@ -551,7 +551,7 @@ video {
 	transform-origin: center center;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	font-weight: 100 !important;
-	}
+}
 
 .hover-content h3 {
 	font-size: 2rem;
@@ -572,38 +572,13 @@ video {
 .image-item:hover img {
 	border-radius: 10px;
 	}
-}
-
-@media screen and (max-width: 768px) {
-	.hover-content {
-		display: none;
-	}
-	
-	.image-item:hover {
-		border-radius: 50%; 
-	}
-	
-	.image-item:hover img {
-		border-radius: 50%; 
-	}
-}
-
-.image-item.large {
-	width: 660px;
-	height: 660px;
-	grid-column: span 2;
-	grid-row: span 2;
-	border-radius: 50%;
-}
-
-.image-item.large:hover {
-	border-radius: 10px;
-}
 
 .image-item.large .hover-content {
 	width: 400px;
+	}
 }
 
+/* modal style */
 .modal-backdrop {
 	position: fixed;
 	top: 0;
@@ -622,10 +597,6 @@ video {
 	opacity: 1;
 }
 
-footer {
-	display: none;
-}
-
 .img-overlay {
     position: fixed;
     top: 0;
@@ -639,8 +610,6 @@ footer {
     justify-content: center;
     padding: 50px;
 }
-
-
 
 @media screen and (min-width: 769px) {
     .img-overlay .image-wrapper {
@@ -686,6 +655,46 @@ footer {
         display: none;
 }
 }
+
+
+@media screen and (max-width: 768px) {
+	.hover-content {
+		display: none;
+	}
+	
+	.image-item:hover {
+		border-radius: 50%; 
+	}
+	
+	.image-item:hover img {
+		border-radius: 50%; 
+	}
+}
+
+.image-item.large {
+	width: 660px;
+	height: 660px;
+	grid-column: span 2;
+	grid-row: span 2;
+	border-radius: 50%;
+}
+
+.image-item.large:hover {
+	border-radius: 10px;
+}
+
+.image-item.large .hover-content {
+	width: 400px;
+}
+
+
+
+footer {
+	display: none;
+}
+
+
+
 
 @media screen and (max-width: 768px) {
     .img-overlay .image-wrapper {
