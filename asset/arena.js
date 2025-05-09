@@ -33,7 +33,11 @@ const getArenaDescription = (block) => {
 	return block.description || '';
 };
 
-// Function to get the correct title
+
+//Extracts the title for different block types from Are.na
+//@param {Object} block - The Are.na block object
+//@returns {string} Extracted title
+
 const getArenaTitle = (block) => {
 	// For Attachment blocks
 	if (block.class === 'Attachment') {
@@ -153,31 +157,18 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
     }
 
     // Click handlers for different types
-    switch (type) {
-        case 'Link':
-            blockItem.addEventListener('click', () => linkTo(fileUrl));
-            break;
-        case 'Video':
-            blockItem.addEventListener('click', () => showVideo(fileUrl));
-            break;
-        case 'Audio':
-            blockItem.addEventListener('click', () => showAudio(title, fileUrl));
-            break;
-        case 'PDF':
-            blockItem.addEventListener('click', () => showPDF(fileUrl));
-            break;
-        case 'Image':
-            if (isMobile) {
-                blockItem.addEventListener('click', () => showImg(imageUrl, title, description));
-            } else {
-                blockItem.addEventListener('click', () => showImg(imageUrl));
-            }
-            break;
-    }
+    const clickHandlers = {
+        'Link': () => window.open(fileUrl, '_blank'),
+        'Video': () => showVideo(fileUrl),
+        'Audio': () => showAudio(title, fileUrl),
+        'PDF': () => showPDF(fileUrl),
+        'Image': () => showImg(imageUrl, title, description)
+    };
 
     channelBlocks.appendChild(blockItem);
     blockItems.push(blockItem);
 }
+
 
 // Utility function to create backdrop for modals
 const createBackdrop = () => {
