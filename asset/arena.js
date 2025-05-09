@@ -165,6 +165,19 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
         'Image': () => showImg(imageUrl, title, description)
     };
 
+  // attach click handler
+  const handler = clickHandlers[type];
+  if (handler) {
+      blockItem.addEventListener('click', isMobile && type === 'Image' ? 
+          () => showImg(imageUrl) : handler);
+  }
+
+  // tracking array
+  channelBlocks.appendChild(blockItem);
+  blockItems.push(blockItem);
+};
+
+
 //     channelBlocks.appendChild(blockItem);
 //     blockItems.push(blockItem);
 // }
