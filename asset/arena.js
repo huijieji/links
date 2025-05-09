@@ -178,30 +178,6 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
 };
 
 
-//     channelBlocks.appendChild(blockItem);
-//     blockItems.push(blockItem);
-// }
-
-
-// // Utility function to create backdrop for modals
-// const createBackdrop = () => {
-//     const backdrop = document.createElement('div');
-//     backdrop.className = 'modal-backdrop';
-//     document.body.appendChild(backdrop);
-//     setTimeout(() => backdrop.classList.add('active'), 10);
-//     return backdrop;
-// };
-
-// // Function to handle link clicks //
-// const linkTo = (url) => {
-//     window.open(url, '_blank');
-// }
-
-// Function to display video modal //
-// * @references:
-// * - MDN Video Element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-// * - Modal Design Patterns: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
-
 const showVideo = (url) => {
     const backdrop = createBackdrop();
     const body = document.querySelector('body');
