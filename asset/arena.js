@@ -215,6 +215,9 @@ const showVideo = (url) => {
 }
 
 // Function to display audio modal //
+//learn it from https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+// Web Audio API founction
+
 const showAudio = (title, url) => {
     const backdrop = createBackdrop();
     const body = document.querySelector('body');
@@ -459,6 +462,7 @@ function initCustomScrollbar() {
 }
 
 // Fetch and render channel content with error handling //
+// learn from https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
     .then((response) => {
         if (!response.ok) {
