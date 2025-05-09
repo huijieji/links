@@ -165,18 +165,22 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
         'Image': () => showImg(imageUrl, title, description)
     };
 
-  // attach click handler
+  // Attach click handler
   const handler = clickHandlers[type];
   if (handler) {
       blockItem.addEventListener('click', isMobile && type === 'Image' ? 
           () => showImg(imageUrl) : handler);
   }
 
-  // tracking array
+  // Add to channel and tracking array
   channelBlocks.appendChild(blockItem);
   blockItems.push(blockItem);
 };
 
+// Function to display video modal //
+// * @references:
+// * - MDN Video Element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+// * - Modal Design Patterns: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
 
 const showVideo = (url) => {
     const backdrop = createBackdrop();
