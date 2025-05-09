@@ -165,24 +165,24 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
         'Image': () => showImg(imageUrl, title, description)
     };
 
-    channelBlocks.appendChild(blockItem);
-    blockItems.push(blockItem);
-}
+//     channelBlocks.appendChild(blockItem);
+//     blockItems.push(blockItem);
+// }
 
 
-// Utility function to create backdrop for modals
-const createBackdrop = () => {
-    const backdrop = document.createElement('div');
-    backdrop.className = 'modal-backdrop';
-    document.body.appendChild(backdrop);
-    setTimeout(() => backdrop.classList.add('active'), 10);
-    return backdrop;
-};
+// // Utility function to create backdrop for modals
+// const createBackdrop = () => {
+//     const backdrop = document.createElement('div');
+//     backdrop.className = 'modal-backdrop';
+//     document.body.appendChild(backdrop);
+//     setTimeout(() => backdrop.classList.add('active'), 10);
+//     return backdrop;
+// };
 
-// Function to handle link clicks //
-const linkTo = (url) => {
-    window.open(url, '_blank');
-}
+// // Function to handle link clicks //
+// const linkTo = (url) => {
+//     window.open(url, '_blank');
+// }
 
 // Function to display video modal //
 // * @references:
