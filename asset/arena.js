@@ -178,6 +178,8 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
 };
 
 
+
+
 //     channelBlocks.appendChild(blockItem);
 //     blockItems.push(blockItem);
 // }
@@ -417,61 +419,8 @@ const showImg = (url, title, description) => {
     document.body.appendChild(div);
 };
 
-// Initialize custom scrollbar //
-function initCustomScrollbar() {
-    const container = document.querySelector('.scroll-container');
-    const thumb = document.querySelector('.scrollbar-thumb');
-    const scrollbar = document.querySelector('.custom-scrollbar');
-    let isDragging = false;
-    let startX, scrollLeft, thumbLeft;
 
-    function updateThumbPosition() {
-        const scrollRatio = container.scrollLeft / (container.scrollWidth - container.clientWidth);
-        const maxOffset = scrollbar.clientWidth - thumb.clientWidth;
-        const newPosition = scrollRatio * maxOffset;
-        thumb.style.transform = `translateX(${newPosition}px)`;
-    }
 
-    container.addEventListener('scroll', updateThumbPosition);
-
-    thumb.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.clientX;
-        thumbLeft = thumb.getBoundingClientRect().left - scrollbar.getBoundingClientRect().left;
-        scrollLeft = container.scrollLeft;
-        thumb.style.transition = 'none';
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-
-        const deltaX = e.clientX - startX;
-        const scrollbarWidth = scrollbar.clientWidth;
-        const thumbWidth = thumb.clientWidth;
-        const maxScroll = container.scrollWidth - container.clientWidth;
-        const maxThumbTravel = scrollbarWidth - thumbWidth;
-
-        const newThumbPosition = Math.max(0, Math.min(maxThumbTravel, thumbLeft + deltaX));
-        const scrollRatio = newThumbPosition / maxThumbTravel;
-
-        container.scrollLeft = scrollRatio * maxScroll;
-        thumb.style.transform = `translateX(${newThumbPosition}px)`;
-    });
-
-    document.addEventListener('mouseup', () => {
-        if (isDragging) {
-            isDragging = false;
-            thumb.style.transition = 'background 0.3s';
-        }
-    });
-
-    scrollbar.addEventListener('click', (e) => {
-        if (e.target === thumb) return;
-        const clickRatio = (e.pageX - scrollbar.getBoundingClientRect().left) / scrollbar.clientWidth;
-        container.scrollLeft = clickRatio * (container.scrollWidth - container.clientWidth);
-    });
-}
 
 // Fetch and render channel content with error handling //
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
