@@ -7,6 +7,7 @@ document.head.appendChild(markdownIt)
 let channelSlug = 'hip-hop-creativity'
 
 // Array to store block items for hover effects
+
 const blockItems = [];
 
 // Function to get the exact description as shown on Arena//
@@ -71,6 +72,7 @@ let classify = (block) => {
     const description = getArenaDescription(block);
     const title = getArenaTitle(block);
     
+    // Uses switch for type branching 
     switch (block.class) {
         case 'Link':
             renderBlock('Link', title, description, block.image?.original.url, block.source.url)
@@ -157,6 +159,7 @@ const renderBlock = (type, title, description, imageUrl, fileUrl) => {
     }
 
     // Click handlers for different types
+    // learn it https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video
     const clickHandlers = {
         'Link': () => window.open(fileUrl, '_blank'),
         'Video': () => showVideo(fileUrl),
@@ -307,12 +310,14 @@ const showAudio = (title, url) => {
 
 // Function to display PDF modal //
 // * @references:https://codepen.io//
+// <iframe>: The Inline Frame elementhttps://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe
+//Set to true if the <iframe> can activate fullscreen mode
+
 const showPDF = (url) => {
     const backdrop = createBackdrop();
     const body = document.querySelector('body');
     const pdfContainer = document.createElement('div');
     pdfContainer.className = 'pdf-container';
-
     const iframe = document.createElement('iframe');
     iframe.src = url;
 
